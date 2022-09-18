@@ -23,5 +23,11 @@ namespace LengthNestingSolution
         {
             InitializeComponent();
         }
+
+        private void nest_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            Close();
+        }
     }
 }

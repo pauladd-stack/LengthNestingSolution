@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LengthNestingSolution"
         mc:Ignorable="d"
-        Title="AutoNest" Height="450" Width="800">
-    <Grid>
+        Title="AutoNest" Height="300" Width="450">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Kerf: "/>
+                <TextBox  x:Name="kerf" Text="1/8" VerticalAlignment="Center" Width="30"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Beginning Trim: "/>
+                <TextBox x:Name="bTrim" Text="1/8" VerticalAlignment="Center" Width="30"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Ending Trim: "/>
+                <TextBox x:Name="eTrim" Text="1/8" VerticalAlignment="Center" Width="30"></TextBox>
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="nest" Content="Nest" Width="50" Height="30" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" IsDefault="True" Click="nest_Click"></Button>
+
     </Grid>
 </Window>
