@@ -29,5 +29,10 @@ namespace LengthNestingSolution
             DialogResult = true;
             Close();
         }
+
+        private void add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

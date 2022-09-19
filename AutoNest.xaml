@@ -17,7 +17,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Content="Qty" VerticalAlignment="Bottom"></Label>
@@ -25,9 +25,9 @@
         <Label Grid.Row="0" Grid.Column="1" Content="Length" VerticalAlignment="Bottom"></Label>
         <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
         <Label Grid.Row="0" Grid.Column="2" Content="Add" VerticalAlignment="Bottom"></Label>
-        <Button x:Name="add" Content="Add" Grid.Row="1" Grid.Column="2"></Button>
+        <Button x:Name="add" Content="Add" Grid.Row="1" Grid.Column="2" Click="add_Click"></Button>
 
-        <ListView></ListView>
+        <ListView Grid.Row="2" Grid.RowSpan ="1" Grid.ColumnSpan="3"></ListView>
         
         <StackPanel Orientation="Horizontal" Grid.Row="5"  Grid.ColumnSpan="5" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
