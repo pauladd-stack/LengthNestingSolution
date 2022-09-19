@@ -10,16 +10,24 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
          
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Label></Label>
+        <Label Grid.Row="0" Grid.Column="0" Content="Qty" VerticalAlignment="Bottom"></Label>
+        <TextBox Grid.Row="1" Grid.Column="0"></TextBox>
+        <Label Grid.Row="0" Grid.Column="1" Content="Length" VerticalAlignment="Bottom"></Label>
+        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+        <Label Grid.Row="0" Grid.Column="2" Content="Add" VerticalAlignment="Bottom"></Label>
+        <Button x:Name="add" Content="Add" Grid.Row="1" Grid.Column="2"></Button>
+
+        <ListView></ListView>
         
         <StackPanel Orientation="Horizontal" Grid.Row="5"  Grid.ColumnSpan="5" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
