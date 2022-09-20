@@ -21,13 +21,14 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Content="Qty" VerticalAlignment="Bottom"></Label>
-        <TextBox Grid.Row="1" Grid.Column="0"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="0" x:Name="qtyValue"></TextBox>
         <Label Grid.Row="0" Grid.Column="1" Content="Length" VerticalAlignment="Bottom"></Label>
-        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="lengthValue"></TextBox>
         <Label Grid.Row="0" Grid.Column="2" Content="Add" VerticalAlignment="Bottom"></Label>
         <Button x:Name="add" Content="Add" Grid.Row="1" Grid.Column="2" Click="add_Click"></Button>
 
-        <ListView Grid.Row="2" Grid.RowSpan ="1" Grid.ColumnSpan="3"></ListView>
+        <ListView x:Name="listView" ItemsSource="{Binding InventoryList}" Grid.Row="2" Grid.ColumnSpan="3">
+        </ListView>
         
         <StackPanel Orientation="Horizontal" Grid.Row="5"  Grid.ColumnSpan="5" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
