@@ -46,9 +46,17 @@ namespace LengthNestingSolution
                 foreach (string file in openFileDialog.FileNames)
                 {
                     string[] lines = System.IO.File.ReadAllLines(file);
-                    Classes.AllProjects.ProjectDetails.ProjectInsert(lines);
-                    Debug.WriteLine(lines[10]);
+                    Classes.AllProjects.Projects.Add(new ProjectDetails()
+                    {
+                        FileName = lines[1],
+                        ProjectName = lines[2],
+                        MaterialDesc = lines[6],
+                        Length = double.Parse(lines[10]),
+                    });
+
                 }
+                foreach (Classes.AllProjects.ProjectDetails job in Classes.AllProjects.Projects)
+                    Debug.WriteLine(job.Length.ToString());
             }
 
         }
