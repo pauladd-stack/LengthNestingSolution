@@ -1,5 +1,6 @@
 ﻿using LengthNestingSolution.Classes;
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
 
@@ -30,9 +31,16 @@ namespace LengthNestingSolution
             }
             foreach (Inventory.InventoryItems inv in newInventory!.InventoryList)
             {
-                nesting.Inventory.Add(inv.Length);
+                for (int i = 0; i < inv.Qty; i++)
+                {
+                    nesting.Inventory.Add(inv.Length);
+                }
             }
             nesting.Nest();
+            foreach (double item in nesting.Inventory)
+            {
+                Debug.WriteLine(item);
+            }
             foreach (double item in nesting.Nested)
             {
                 Debug.WriteLine(item);
