@@ -1,20 +1,8 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using LengthNestingSolution.Classes;
+using Microsoft.Win32;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace LengthNestingSolution
 {
@@ -23,6 +11,7 @@ namespace LengthNestingSolution
     /// </summary>
     public partial class MainWindow : Window
     {
+        AllProjects newProject = new AllProjects();
         public MainWindow()
         {
             InitializeComponent();
@@ -46,7 +35,7 @@ namespace LengthNestingSolution
                 foreach (string file in openFileDialog.FileNames)
                 {
                     string[] lines = System.IO.File.ReadAllLines(file);
-                    Classes.AllProjects.Projects.Add(new ProjectDetails()
+                    newProject.Projects.Add(new AllProjects.ProjectDetails()
                     {
                         FileName = lines[1],
                         ProjectName = lines[2],
@@ -55,7 +44,7 @@ namespace LengthNestingSolution
                     });
 
                 }
-                foreach (Classes.AllProjects.ProjectDetails job in Classes.AllProjects.Projects)
+                foreach (AllProjects.ProjectDetails job in newProject.Projects)
                     Debug.WriteLine(job.Length.ToString());
             }
 
@@ -64,6 +53,7 @@ namespace LengthNestingSolution
         private void autoNest_Click(object sender, RoutedEventArgs e)
         {
             AutoNest popup = new AutoNest();
+            popup.newProject = newProject;
             var dialog = popup.ShowDialog();
             
             if (dialog == true)

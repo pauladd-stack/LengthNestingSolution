@@ -4,27 +4,36 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Navigation;
 
 namespace LengthNestingSolution.Classes
 {
     public class Nesting
     {
-    public static List<double> LengthList { get; private set; } = new List<double>();
-        public static double TotalLength { get; private set; }
 
-        private static void AddLength(double value)
+        public List<double>? LengthList { get; set; } = new List<double>();
+        public List<double>? Inventory { get; set; } = new List<double>();
+        public List<double>? Nested { get; set; } = new List<double>();
+
+        public void Nest()
         {
-            TotalLength = TotalLength + value;
-        }
-        public static void InsertLengths()
-        {
-            foreach (AllProjects.ProjectDetails proj in AllProjects.Project)
+            double itemCmp = 0;
+
+            foreach (double item in Inventory)
             {
-                LengthList.Add(proj.Length);
-                AddLength(proj.Length);
+                itemCmp = item;
+                foreach (double length in LengthList)
+                {
+                    if (itemCmp > length)
+                    {
+                        Nested.Add(length);
+                        itemCmp = item - length;
+                    }
+                }
             }
         }
 
+        
        
 
     }
